@@ -5,9 +5,8 @@ from glob import glob
 
 class Cnn():
     def __init__(self):
-        self.model = load_model('weights_v2.h5')
+        self.model = load_model('model/cnn_weights_v2.h5')
         self.labels = np.array(['cell1', 'cell2', 'cell3', 'cell4', 'cell5', 'cell6', 'cell_close', 'cell_flag', 'cell_flag_miss', 'cell_open', 'cell_open_miss'])
-        self.model_oc = load_model('weights_open.h5')
 
     def check_one(self, file_path):
         image = Image.open(file_path)
@@ -24,9 +23,6 @@ class Cnn():
                 class_index = [9]
             else:
                 class_index = [6]
-            # predict_classes = self.model_oc.predict(X)
-            # class_index = [predict_classes[0].argmax()]
-            # class_index = list([9 if 0 == class_index[0] else 6])
         return class_index
         
     def check_all(self, folder="capture/_*.png"):

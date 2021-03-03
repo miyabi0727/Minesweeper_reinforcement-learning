@@ -75,9 +75,8 @@ model.compile(loss='categorical_crossentropy', optimizer=optimizers, metrics=['a
 results[0] = model.fit(X, Y, batch_size=2, epochs=epochs )
 
 model_json_str = model.to_json()
-open('model_v2.json', 'w').write(model_json_str)
-model.save('weights_open.h5')
-
+open('model/cnn_model_v2.json', 'w').write(model_json_str)
+model.save('model/cnn_weights_open.h5')
 
 x = range(epochs)
 for k, result in results.items():

@@ -44,14 +44,14 @@ agent.compile(Adam())
 # 最終的なmodelを表示
 # print(agent.model.summary())
 
-agent.load_weights('DQN_v4_agent.h5')
+agent.load_weights('model/DQN_v4_agent.h5')
 
 # 訓練
 print("--- start ---")
 print("'Ctrl + C' is stop.")
 history = agent.fit(env, nb_steps=50000, visualize=False, verbose=1)
 
-agent.save_weights('DQN_v4_agent.h5')
+agent.save_weights('model/DQN_v4_agent.h5')
 # model.save_weights('DQN_v2_model.h5')
 
 import pdb; pdb.set_trace()
