@@ -4,7 +4,7 @@ import pyautogui
 import time
 
 from capture import Capture
-from cell_check import Cnn
+from cell_cnn_classification import Cnn
 
 class Env(object):
     capture = Capture()
